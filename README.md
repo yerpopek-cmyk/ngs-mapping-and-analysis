@@ -1,3 +1,4 @@
+``
 🧬 NGS Mapping & Bioinformatics Analysis Pipeline
 
 Добро пожаловать в репозиторий NGS Mapping & Analysis. Этот проект объединяет ключевые этапы биоинформатического анализа данных секвенирования следующего поколения (NGS): от сырых прочтений до аннотации геномов, поиска мутаций (Variant Calling) и филогенетических реконструкций.
@@ -88,3 +89,4 @@ bash 02_variant_calling.sh
 Reads → QC → Assembly → Annotation → Downstream (Variants / Pathways / Comparative)
 
 (Подробную математическую базу и теорию смотрите в docs/theory_and_formulas.md)
+``
