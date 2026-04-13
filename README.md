@@ -1,10 +1,11 @@
-```
-#🧬 NGS Mapping & Bioinformatics Analysis Pipeline
 
+#🧬 NGS Mapping & Bioinformatics Analysis Pipeline
+```
 Добро пожаловать в репозиторий NGS Mapping & Analysis. Этот проект объединяет ключевые этапы биоинформатического анализа данных секвенирования следующего поколения (NGS): от сырых прочтений до аннотации геномов, поиска мутаций (Variant Calling) и филогенетических реконструкций.
+```
 
 #📂 Структура репозитория
-
+```
 В репозитории файлы распределены по их назначению для обеспечения порядка и воспроизводимости:
 
 docs/: Содержит теоретическую базу. В файле theory_and_formulas.md собраны все ключевые математические формулы (E-value, QUAL, алгоритм Neighbor-Joining, скоринг Prodigal) и принципы работы инструментов.
@@ -31,9 +32,9 @@ ngs-mapping-and-analysis/
     ├── 02_variant_calling.sh     <-- Код для поиска вариантов (BWA, FreeBayes, bcftools)
     └── 03_phylogenetics.sh       <-- Код для филогенетики (MAFFT)
 ```
-```
-🛠️ Используемые инструменты (Tools Stack)
 
+🛠️ Используемые инструменты (Tools Stack)
+```
 Этап анализа
 
 Инструменты
@@ -75,9 +76,9 @@ Workflow
 Nextflow
 
 Развертывание конвейеров (опционально для функциональной аннотации)
-
+```
 🚀 Как использовать (Quick Start)
-
+```
 Клонируйте репозиторий:
 
 git clone [https://github.com/your-username/ngs-mapping-and-analysis.git](https://github.com/your-username/ngs-mapping-and-analysis.git)
@@ -95,9 +96,9 @@ conda activate ngs_env
 cd scripts
 bash 02_variant_calling.sh
 
-
+```
 🧠 Логика пайплайна (Evidence Ladder)
-
+```
 Наш анализ строится на концептуальной "лестнице доказательств":
 Reads → QC → Assembly → Annotation → Downstream (Variants / Pathways / Comparative)
 
