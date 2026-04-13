@@ -32,49 +32,16 @@ ngs-mapping-and-analysis/
     └── 03_phylogenetics.sh       <-- Код для филогенетики (MAFFT)
 ```
 
-🛠️ Используемые инструменты (Tools Stack)
+## 🧰 Tools Stack
 
-Этап анализа
-
-Инструменты
-
-Назначение
-
-Mapping & QC
-
-BWA-MEM, Samtools, Picard
-
-Картирование ридов на референс, сортировка, маркировка дубликатов
-
-Variant Calling
-
-FreeBayes, bcftools, vt
-
-Поиск SNV и Indel, байесовский вывод, нормализация VCF
-
-Annotation (Genomic)
-
-Prokka, Prodigal
-
-Поиск ORF, РНК, структурная аннотация бактерий/вирусов
-
-Annotation (Variants)
-
-snpEff, bcftools csq
-
-Оценка функционального эффекта мутаций (VEP-аналоги)
-
-Phylogenetics
-
-MAFFT, MEGA
-
-Множественное выравнивание (FFT-алгоритм) и построение NJ деревьев
-
-Workflow
-
-Nextflow
-
-Развертывание конвейеров (опционально для функциональной аннотации)
+| 📊 Этап анализа | 🛠️ Инструменты | 📋 Назначение |
+|:---|:---|:---|
+| **🗺️ Mapping & QC** | `BWA-MEM` • `Samtools` • `Picard` | Картирование ридов на референс, сортировка, маркировка дубликатов |
+| **🔍 Variant Calling** | `FreeBayes` • `bcftools` • `vt` | Поиск SNV и Indel, байесовский вывод, нормализация VCF |
+| **🧬 Annotation (Genomic)** | `Prokka` • `Prodigal` | Поиск ORF, РНК, структурная аннотация бактерий/вирусов |
+| **🏷️ Annotation (Variants)** | `snpEff` • `bcftools csq` | Оценка функционального эффекта мутаций (VEP-аналоги) |
+| **🌳 Phylogenetics** | `MAFFT` • `MEGA` | Множественное выравнивание (FFT-алгоритм) и построение NJ деревьев |
+| **⚙️ Workflow** | `Nextflow` | Развертывание конвейеров *(опционально для функциональной аннотации)* |
 
 🚀 Как использовать (Quick Start)
 ```
