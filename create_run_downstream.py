@@ -1,0 +1,64 @@
+#!/usr/bin/env python3
+import sys
+from pathlib import Path
+
+content = """#!/usr/bin/env bash
+# =============================================================================
+#  run_downstream.sh — Run Projects 03, 04, 05 Downstream Pipelines
+# =============================================================================
+set -euo pipefail
+
+# Enable Conda in current script environment
+source ~/miniconda3/etc/profile.d/conda.sh
+conda activate wgs_align_env
+export PATH="$PATH:/home/yer_kanat/miniconda3/envs/QC_fastq/bin:/home/yer_kanat/miniconda3/envs/ucsc/bin"
+
+echo "=================================================="
+echo "  NGS Mapping & Analysis Suite Downstream Runner"
+echo "  Running Projects 03, 04, and 05 on chr22"
+echo "=================================================="
+
+echo -e "\n>>> PROJECT 03: Generating Coverage Panorama (coverage_panorama.py)..."
+python 03_coverage_panorama/coverage_panorama.py \\
+  -s results/qc/chr22_sample.regions.bed.gz \\
+  -n "Chr22 WGS Sample (50k reads)" \\
+  -o results/chr22_panorama.png
+
+echo -e "\n>>> PROJECT 04: Running QC Sentinel Dashboard..."
+# Single sample report (WGS)
+python 04_qc_sentinel/qc_sentinel.py \\
+  --dir results/ \\
+  --html results/wgs_qc_report.html \\
+  --json results/wgs_qc_summary.json
+
+# Single sample report (RNA-seq)
+python 04_qc_sentinel/qc_sentinel.py \\
+  --dir rnaseq_results/ \\
+  --html rnaseq_results/rnaseq_qc_report.html \\
+  --json rnaseq_results/rnaseq_qc_summary.json
+
+echo -e "\n>>> PROJECT 05: Running Aligner Benchmark (run_benchmark.sh)..."
+bash 05_aligner_benchmark/run_benchmark.sh \\
+  -1 data/chr22_sample_R1.fastq.gz \\
+  -2 data/chr22_sample_R2.fastq.gz \\
+  -r reference/chr22.fa \\
+  -x reference/chr22_hisat2_index \\
+  -o benchmark_results \\
+  -n 50000 \\
+  -t 8
+
+echo -e "\n=================================================="
+echo "  [COMPLETE] Downstream runs finished successfully!"
+echo "  Project 03 Panorama:    results/chr22_panorama.png"
+echo "  Project 04 WGS Report:  results/wgs_qc_report.html"
+echo "  Project 04 RNA Report:  rnaseq_results/rnaseq_qc_report.html"
+echo "  Project 05 Report:      benchmark_results/benchmark_report.html"
+echo "=================================================="
+"""
+
+# Write with Unix line endings (\n)
+dest = Path(__file__).parent / "run_downstream.sh"
+with open(dest, "w", newline="\n", encoding="utf-8") as f:
+    f.write(content)
+
+print(f"[OK] run_downstream.sh written successfully at {dest}")

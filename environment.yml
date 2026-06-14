@@ -1,0 +1,53 @@
+name: ngs-mapping
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+
+dependencies:
+  # --- Aligners ---
+  - bwa-mem2>=2.2.1
+  - bwa=0.7.17
+  - hisat2>=2.2.1
+  - star>=2.7.10a
+  - minimap2>=2.24
+
+  # --- BAM/SAM manipulation ---
+  - samtools>=1.15
+  - sambamba>=0.8.2
+  - bedtools>=2.30.0
+
+  # --- Duplicate marking & metrics ---
+  - picard>=2.27.0
+
+  # --- Coverage ---
+  - mosdepth>=0.3.3
+
+  # --- QC tools ---
+  - fastqc>=0.11.9
+  - fastp>=0.23.0
+  - multiqc>=1.14
+  - qualimap>=2.2.2
+  - rseqc>=3.0.1
+  - preseq>=3.1.2
+
+  # --- Workflow ---
+  - nextflow>=23.04.0
+
+  # --- Python ecosystem ---
+  - python>=3.10
+  - pip
+  - numpy>=1.24
+  - pandas>=2.0
+  - matplotlib>=3.7
+  - seaborn>=0.12
+  - scipy>=1.10
+  - pysam>=0.21
+  - rich>=13.0
+  - click>=8.1
+  - jinja2>=3.1
+  - plotly>=5.14
+
+  - pip:
+    - pydeseq2
+    - natsort

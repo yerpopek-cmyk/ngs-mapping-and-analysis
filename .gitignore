@@ -1,0 +1,90 @@
+# Data files (never commit raw/processed genomic data)
+*.fastq
+*.fastq.gz
+*.fq
+*.fq.gz
+*.bam
+*.bai
+*.cram
+*.crai
+*.vcf
+*.vcf.gz
+*.tbi
+*.bcf
+
+# Reference genomes
+*.fa
+*.fasta
+*.fai
+*.dict
+*.amb
+*.ann
+*.bwt
+*.pac
+*.sa
+*.ht2
+*.ht2l
+
+# Output directories
+results/
+output/
+work/
+tmp/
+temp/
+.nextflow/
+.nextflow.log*
+report.html
+timeline.html
+trace.txt
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.venv/
+venv/
+env/
+*.egg
+.pytest_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Conda
+.conda/
+
+# Logs
+*.log
+*.err
+*.out
+slurm-*.out
+
+# Local pipeline data and benchmark outputs
+reference/
+data/
+rnaseq_results/
+benchmark_results/
+mock_results/
+nextflow_results/
+*.0123
+*.bwt.2bit.64
+*.bed.gz
+*.tin.xls
+*.summary.txt
+log.txt
+fasterq.tmp.*/
