@@ -1,4 +1,4 @@
-# NGS Mapping and Analysis Suite
+# NGS Mapping WGS, RNA-seq, Panorama Suite
 
 A production-grade bioinformatics workspace that implements standard genomic alignment workflows, quality control batteries, coverage visualization, and multi-aligner benchmarking. Designed for whole-genome sequencing (WGS), whole-exome sequencing (WES), and RNA-seq datasets, it provides a structured, reproducible framework for processing high-throughput sequencing reads from raw FASTQ to final reports.
 
